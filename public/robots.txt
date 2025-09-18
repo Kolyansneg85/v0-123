@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jk-geniy.ru/sitemap.xml
+
+# Disallow crawling of admin or private areas (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Disallow privacy and personal data pages from search indexing
+Disallow: /privacy/
+Disallow: /personal-data/
