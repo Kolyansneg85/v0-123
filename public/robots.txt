@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://jk-geniy.ru/sitemap.xml
+Sitemap: https://v0-123-pi-tawny.vercel.app/sitemap.xml
 
 # Disallow crawling of admin or private areas (if any)
 Disallow: /api/
