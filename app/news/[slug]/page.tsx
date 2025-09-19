@@ -392,7 +392,15 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
             <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-balance">{article.title}</h1>
 
             <div
-              className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 mb-8"
+              className="prose prose-lg max-w-none 
+                prose-headings:text-gray-900 prose-headings:font-bold prose-headings:mt-8 prose-headings:mb-4
+                prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
+                prose-p:text-gray-700 prose-p:mb-4 prose-p:leading-relaxed
+                prose-li:text-gray-700 prose-li:mb-2
+                prose-ul:mb-6 prose-ul:space-y-2
+                prose-strong:text-gray-900 prose-strong:font-semibold
+                prose-a:text-[#a8996e] prose-a:no-underline hover:prose-a:text-[#c4b896]
+                [&>script]:hidden"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
 

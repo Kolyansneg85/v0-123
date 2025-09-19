@@ -40,6 +40,33 @@ export const metadata: Metadata = {
     "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
   keywords: "клубный дом, коллекционер, петроградский район, элитное жилье, санкт-петербург, чапыгина 4",
   generator: "v0.app",
+  openGraph: {
+    title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
+    description:
+      "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
+    url: "https://kollektsioner-dom.ru",
+    siteName: "Клубный дом Коллекционер",
+    images: [
+      {
+        url: "https://kollektsioner-dom.ru/images/hero-building-light.webp",
+        width: 1200,
+        height: 630,
+        alt: "Клубный дом Коллекционер на Петроградской стороне",
+      },
+    ],
+    locale: "ru_RU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
+    description:
+      "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
+    images: ["https://kollektsioner-dom.ru/images/hero-building-light.webp"],
+  },
+  alternates: {
+    canonical: "https://kollektsioner-dom.ru",
+  },
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
