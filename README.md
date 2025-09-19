@@ -2,7 +2,7 @@
 
 *Automatically synced with your [v0.app](https://v0.app) deployments*
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/nicks-projects-03bd4fc7/v0-jk-geniy)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/nicks-projects-03bd4fc7/v0-123)
 [![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/nctfBICYttD)
 
 ## Overview
@@ -14,7 +14,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/nicks-projects-03bd4fc7/v0-jk-geniy](https://vercel.com/nicks-projects-03bd4fc7/v0-jk-geniy)**
+**[https://v0-123-pi-tawny.vercel.app](https://v0-123-pi-tawny.vercel.app)**
 
 ## Build your app
 

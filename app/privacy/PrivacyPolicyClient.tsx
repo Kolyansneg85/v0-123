@@ -78,7 +78,7 @@ export default function PrivacyPolicyClient() {
               </p>
               <p>
                 1.4. Настоящая Политика применяется ко всей информации, которую Оператор может получить о посетителях
-                веб-сайта kollektsioner-dom.ru.
+                веб-сайта v0-123-pi-tawny.vercel.app.
               </p>
             </section>
 
@@ -137,7 +137,7 @@ export default function PrivacyPolicyClient() {
                   <strong>3.8. Электронная почта:</strong> info@domfy.ru
                 </p>
                 <p>
-                  <strong>3.9. Адрес сайта:</strong> kollektsioner-dom.ru
+                  <strong>3.9. Адрес сайта:</strong> v0-123-pi-tawny.vercel.app
                 </p>
                 <p>
                   <strong>3.10. Налоговый орган:</strong> Межрайонная инспекция Федеральной налоговой службы №15 по
@@ -163,7 +163,7 @@ export default function PrivacyPolicyClient() {
 
             <section>
               <h2 className="text-2xl font-medium mb-4 text-gray-900">
-                5. Правовые основ��ния обработки персональных данных
+                5. Правовые основния обработки персональных данных
               </h2>
               <p className="mb-4">5.1. Обработка персональных данных осуществляется на основании:</p>
               <ul className="list-disc pl-6 space-y-2">
@@ -171,7 +171,7 @@ export default function PrivacyPolicyClient() {
                   Согласия субъекта персональных данных на обработку его персональных данных (п. 1 ч. 1 ст. 6 152-ФЗ)
                 </li>
                 <li>
-                  Исполнения договора, стороной которого является субъект персональных данных (п. 2 ч. 1 с��. 6 152-ФЗ)
+                  Исполнения договора, стороной которого является субъект персональных данных (п. 2 ч. 1 с. 6 152-ФЗ)
                 </li>
                 <li>Осуществления прав и законных интересов оператора или третьих лиц (п. 6 ч. 1 ст. 6 152-ФЗ)</li>
                 <li>Исполнения возложенных законодательством обязанностей</li>
@@ -182,7 +182,7 @@ export default function PrivacyPolicyClient() {
               <h2 className="text-2xl font-medium mb-4 text-gray-900">6. Категории субъектов персональных данных</h2>
               <p className="mb-4">6.1. Субъектами персональных данных являются:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Посетители сайта kollektsioner-dom.ru</li>
+                <li>Посетители сайта v0-123-pi-tawny.vercel.app</li>
                 <li>Потенциальные и действующие клиенты агентства недвижимости</li>
                 <li>Лица, обратившиеся за консультацией по недвижимости</li>
                 <li>Подписчики на информационную рассылку</li>
@@ -335,7 +335,9 @@ export default function PrivacyPolicyClient() {
               <h2 className="text-2xl font-medium mb-4 text-gray-900">
                 12. Использование файлов cookies и систем аналитики
               </h2>
-              <p className="mb-4">12.1. На сайте jk-geniy.ru используются файлы cookies и системы веб-аналитики для:</p>
+              <p className="mb-4">
+                12.1. На сайте v0-123-pi-tawny.vercel.app используются файлы cookies и системы веб-аналитики для:
+              </p>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Улучшения функционирования сайта</li>
                 <li>Анализа посещаемости и пользовательского поведения</li>
@@ -400,7 +402,7 @@ export default function PrivacyPolicyClient() {
                   <strong>Email:</strong> info@domfy.ru
                 </p>
                 <p>
-                  <strong>Сайт:</strong> kollektsioner-dom.ru
+                  <strong>Сайт:</strong> v0-123-pi-tawny.vercel.app
                 </p>
                 <p>
                   <strong>Ответственный за обработку персональных данных:</strong> Козлов Николай Викторович
@@ -419,9 +421,9 @@ export default function PrivacyPolicyClient() {
                 об изменениях, вносимых в настоящую Политику.
               </p>
               <p className="mb-4">
-                15.2. Актуальная версия Политики размещается на сайте kollektsioner-dom.ru по адресу: kollektsioner-dom.ru/privacy/ и
-                вступает в силу с момента ее размещения, если иной порядок вступления в силу не предусмотрен новой
-                редакцией Политики.
+                15.2. Актуальная версия Политики размещается на сайте v0-123-pi-tawny.vercel.app по адресу:
+                v0-123-pi-tawny.vercel.app/privacy/ и вступает в силу с момента ее размещения, если иной порядок
+                вступления в силу не предусмотрен новой редакцией Политики.
               </p>
               <p className="mb-4">
                 15.3. В случае несогласия субъекта персональных данных с условиями настоящей Политики обработка его
