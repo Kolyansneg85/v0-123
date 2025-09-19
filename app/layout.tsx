@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Roboto } from "next/font/google"
-import localFont from "next/font/local"
+import { Inter, Roboto, Montserrat, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import ChatWidget from "../components/chat-widget"
 
@@ -19,17 +18,19 @@ const roboto = Roboto({
   display: "swap",
 })
 
-// Подключение локального шрифта HistoryPro-Two для заголовков
-const historyPro = localFont({
-  src: "./fonts/HistoryPro-Two.ttf",
-  variable: "--font-history-pro",
+// Montserrat как замена для CeraPro - современный геометрический шрифт
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-cera-pro",
   display: "swap",
 })
 
-// Подключение локального шрифта CeraPro-Regular для основного текста
-const ceraPro = localFont({
-  src: "./fonts/CeraPro-Regular.woff",
-  variable: "--font-cera-pro",
+// Playfair Display как замена для HistoryPro - элегантный шрифт для заголовков
+const playfairDisplay = Playfair_Display({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-history-pro",
   display: "swap",
 })
 
@@ -48,7 +49,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ru" className={`${inter.variable} ${historyPro.variable} ${ceraPro.variable} ${roboto.variable}`}>
+    <html
+      lang="ru"
+      className={`${inter.variable} ${playfairDisplay.variable} ${montserrat.variable} ${roboto.variable}`}
+    >
       <body className="overflow-x-hidden">
         {children}
         <ChatWidget />
