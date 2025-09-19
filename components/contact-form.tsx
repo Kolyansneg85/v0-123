@@ -96,7 +96,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="font-light opacity-75 text-sm uppercase tracking-wide">Телефон</p>
-                  <p className="text-xl">+7 (812) 660-56-51</p>
+                  <p className="text-xl">+7 (812) 660-56-50</p>
                 </div>
               </div>
 

@@ -79,36 +79,10 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
         </DialogHeader>
 
         <div className="space-y-6 text-gray-700">
-          {/* 100% Payment */}
           <div className="border-l-4 border-[#a8996e] pl-4">
-            <h3 className="text-lg font-medium text-[#a8996e] mb-2">100% оплата</h3>
-            <p className="leading-relaxed">Полная оплата стоимости квартиры единовременно с максимальной выгодой.</p>
-          </div>
-
-          {/* Interest-free installment */}
-          <div className="border-l-4 border-[#a8996e] pl-4">
-            <h3 className="text-lg font-medium text-[#a8996e] mb-2">Беспроцентная рассрочка от застройщика</h3>
-            <p className="leading-relaxed">
-              Разбитая на удобные суммы выплата стоимости квартиры без переплат на срок до 2,5 лет. Обычно первый взнос
-              составляет 20-30%, остальная сумма оплачивается равными ежемесячными или ежеквартальными платежами до
-              марта 2028 года.
-            </p>
-          </div>
-
-          {/* Mortgage and government programs */}
-          <div className="border-l-4 border-[#a8996e] pl-4">
-            <h3 className="text-lg font-medium text-[#a8996e] mb-2">Ипотечное кредитование</h3>
-            <p className="leading-relaxed">
-              Работаем с ведущими банками. Доступны программы с использованием материнского капитала и военной ипотеки.
-            </p>
-          </div>
-
-          {/* Trade-in program */}
-          <div className="border-l-4 border-[#a8996e] pl-4">
-            <h3 className="text-lg font-medium text-[#a8996e] mb-2">Программа Trade-in</h3>
-            <p className="leading-relaxed">
-              Обмен имеющейся недвижимости с первым взносом от 10% и остатком оплаты позже, по цене 100%-й оплаты без
-              скидок.
+            <p className="leading-relaxed text-base">
+              Информация о способах оплаты, появится в скором времени, сразу после старта продаж. А пока, вы можете
+              проконсультироваться с нашим специалистом или записаться в лист ожидания, заполнив форму ниже.
             </p>
           </div>
         </div>

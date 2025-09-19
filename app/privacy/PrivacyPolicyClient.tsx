@@ -78,7 +78,7 @@ export default function PrivacyPolicyClient() {
               </p>
               <p>
                 1.4. Настоящая Политика применяется ко всей информации, которую Оператор может получить о посетителях
-                веб-сайта jk-geniy.ru.
+                веб-сайта kollektsioner-dom.ru.
               </p>
             </section>
 
@@ -137,7 +137,7 @@ export default function PrivacyPolicyClient() {
                   <strong>3.8. Электронная почта:</strong> info@domfy.ru
                 </p>
                 <p>
-                  <strong>3.9. Адрес сайта:</strong> jk-geniy.ru
+                  <strong>3.9. Адрес сайта:</strong> kollektsioner-dom.ru
                 </p>
                 <p>
                   <strong>3.10. Налоговый орган:</strong> Межрайонная инспекция Федеральной налоговой службы №15 по
@@ -163,7 +163,7 @@ export default function PrivacyPolicyClient() {
 
             <section>
               <h2 className="text-2xl font-medium mb-4 text-gray-900">
-                5. Правовые основания обработки персональных данных
+                5. Правовые основ��ния обработки персональных данных
               </h2>
               <p className="mb-4">5.1. Обработка персональных данных осуществляется на основании:</p>
               <ul className="list-disc pl-6 space-y-2">
@@ -171,7 +171,7 @@ export default function PrivacyPolicyClient() {
                   Согласия субъекта персональных данных на обработку его персональных данных (п. 1 ч. 1 ст. 6 152-ФЗ)
                 </li>
                 <li>
-                  Исполнения договора, стороной которого является субъект персональных данных (п. 2 ч. 1 ст. 6 152-ФЗ)
+                  Исполнения договора, стороной которого является субъект персональных данных (п. 2 ч. 1 с��. 6 152-ФЗ)
                 </li>
                 <li>Осуществления прав и законных интересов оператора или третьих лиц (п. 6 ч. 1 ст. 6 152-ФЗ)</li>
                 <li>Исполнения возложенных законодательством обязанностей</li>
@@ -182,7 +182,7 @@ export default function PrivacyPolicyClient() {
               <h2 className="text-2xl font-medium mb-4 text-gray-900">6. Категории субъектов персональных данных</h2>
               <p className="mb-4">6.1. Субъектами персональных данных являются:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Посетители сайта jk-geniy.ru</li>
+                <li>Посетители сайта kollektsioner-dom.ru</li>
                 <li>Потенциальные и действующие клиенты агентства недвижимости</li>
                 <li>Лица, обратившиеся за консультацией по недвижимости</li>
                 <li>Подписчики на информационную рассылку</li>
@@ -394,13 +394,13 @@ export default function PrivacyPolicyClient() {
                   <strong>Коммерческое наименование:</strong> Агентство недвижимости «Domfy»
                 </p>
                 <p>
-                  <strong>Телефон:</strong> +7 (812) 660-56-51
+                  <strong>Телефон:</strong> +7 (812) 660-56-50
                 </p>
                 <p>
                   <strong>Email:</strong> info@domfy.ru
                 </p>
                 <p>
-                  <strong>Сайт:</strong> jk-geniy.ru
+                  <strong>Сайт:</strong> kollektsioner-dom.ru
                 </p>
                 <p>
                   <strong>Ответственный за обработку персональных данных:</strong> Козлов Николай Викторович
@@ -419,7 +419,7 @@ export default function PrivacyPolicyClient() {
                 об изменениях, вносимых в настоящую Политику.
               </p>
               <p className="mb-4">
-                15.2. Актуальная версия Политики размещается на сайте jk-geniy.ru по адресу: jk-geniy.ru/privacy/ и
+                15.2. Актуальная версия Политики размещается на сайте kollektsioner-dom.ru по адресу: kollektsioner-dom.ru/privacy/ и
                 вступает в силу с момента ее размещения, если иной порядок вступления в силу не предусмотрен новой
                 редакцией Политики.
               </p>
@@ -440,7 +440,7 @@ export default function PrivacyPolicyClient() {
             <div className="mt-12 pt-8 border-t border-gray-200 bg-gray-50 p-6 rounded-lg">
               <div className="space-y-2 text-sm">
                 <p>
-                  <strong>Дата вступления в силу:</strong> 20 июля 2025 года
+                  <strong>Дата вступления в силу:</strong> 15 сентября 2025 года
                 </p>
                 <p>
                   <strong>Дата последнего обновления:</strong> {getCurrentDate()}
