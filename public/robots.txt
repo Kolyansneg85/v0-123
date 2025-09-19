@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://v0-123-pi-tawny.vercel.app/sitemap.xml
+Sitemap: https://kollektsioner-dom.ru/sitemap.xml
 
 # Disallow crawling of admin or private areas (if any)
 Disallow: /api/

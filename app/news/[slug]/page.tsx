@@ -27,10 +27,10 @@ const articles: Article[] = [
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/news/kollekcioner-dom-s-pinakotekoy#post",
+        "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/news/kollekcioner-dom-s-pinakotekoy#post",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/news/kollekcioner-dom-s-pinakotekoy"
+          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/news/kollekcioner-dom-s-pinakotekoy"
         },
         "headline": "Клубный дом «Коллекционер»: дом с картинной галереей на Петроградской стороне",
         "alternativeHeadline": "Пинакотека, эклектика и приватные пространства: арт‑концепция «Коллекционера»",
@@ -56,24 +56,24 @@ const articles: Article[] = [
         "dateModified": "2025-09-19T19:56:00+03:00",
         "author": {
           "@type": "Organization",
-          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/#org",
+          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/#org",
           "name": "Редакция блога «Коллекционер»"
         },
         "publisher": {
           "@type": "Organization",
-          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/#org",
+          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/#org",
           "name": "Коллекционер — официальный сайт",
           "logo": {
             "@type": "ImageObject",
-            "url": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/images/logo.png",
+            "url": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/images/logo.png",
             "width": 512,
             "height": 512
           }
         },
         "image": [
-          "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/images/art-gallery-interior.png",
-          "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/images/building-facade.webp",
-          "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/images/courtyard-1.jpeg"
+          "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/images/art-gallery-interior.png",
+          "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/images/building-facade.webp",
+          "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/images/courtyard-1.jpeg"
         ],
         "about": [
           {
@@ -160,10 +160,10 @@ const articles: Article[] = [
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/news/zastroishchik-razreshenie-kollekcioner#post",
+        "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/news/zastroishchik-razreshenie-kollekcioner#post",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/news/zastroishchik-razreshenie-kollekcioner"
+          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/news/zastroishchik-razreshenie-kollekcioner"
         },
         "headline": "Застройщик получил разрешение на строительство клубного дома «Коллекционер» на Петроградской стороне",
         "alternativeHeadline": "Разрешение на строительство: старт флагманского проекта «Коллекционер» на ул. Чапыгина, 4",
@@ -191,24 +191,24 @@ const articles: Article[] = [
         "dateModified": "2025-09-19T19:45:00+03:00",
         "author": {
           "@type": "Organization",
-          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/#org",
+          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/#org",
           "name": "Редакция блога «Коллекционер»"
         },
         "publisher": {
           "@type": "Organization",
-          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/#org",
+          "@id": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/#org",
           "name": "Коллекционер — официальный сайт",
           "logo": {
             "@type": "ImageObject",
-            "url": "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/images/logo.png",
+            "url": "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/images/logo.png",
             "width": 512,
             "height": 512
           }
         },
         "image": [
-          "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/images/building-facade.webp",
-          "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/images/art-gallery-interior.png",
-          "${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/images/courtyard-1.jpeg"
+          "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/images/building-facade.webp",
+          "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/images/art-gallery-interior.png",
+          "${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/images/courtyard-1.jpeg"
         ],
         "about": [
           {
@@ -349,7 +349,7 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
     notFound()
   }
 
-  const fullUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://domfy.ru"}/news/${article.slug}`
+  const fullUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://kollektsioner-dom.ru"}/news/${article.slug}`
 
   return (
     <div className="min-h-screen bg-gray-50">

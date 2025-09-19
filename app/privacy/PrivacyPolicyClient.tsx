@@ -78,7 +78,7 @@ export default function PrivacyPolicyClient() {
               </p>
               <p>
                 1.4. Настоящая Политика применяется ко всей информации, которую Оператор может получить о посетителях
-                веб-сайта v0-123-pi-tawny.vercel.app.
+                веб-сайта kollektsioner-dom.ru.
               </p>
             </section>
 
@@ -134,10 +134,10 @@ export default function PrivacyPolicyClient() {
                   <strong>3.7. Контактный телефон:</strong> +7 (812) 660-56-51
                 </p>
                 <p>
-                  <strong>3.8. Электронная почта:</strong> info@domfy.ru
+                  <strong>3.8. Электронная почта:</strong> info@kollektsioner-dom.ru
                 </p>
                 <p>
-                  <strong>3.9. Адрес сайта:</strong> v0-123-pi-tawny.vercel.app
+                  <strong>3.9. Адрес сайта:</strong> kollektsioner-dom.ru
                 </p>
                 <p>
                   <strong>3.10. Налоговый орган:</strong> Межрайонная инспекция Федеральной налоговой службы №15 по
@@ -182,7 +182,7 @@ export default function PrivacyPolicyClient() {
               <h2 className="text-2xl font-medium mb-4 text-gray-900">6. Категории субъектов персональных данных</h2>
               <p className="mb-4">6.1. Субъектами персональных данных являются:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Посетители сайта v0-123-pi-tawny.vercel.app</li>
+                <li>Посетители сайта kollektsioner-dom.ru</li>
                 <li>Потенциальные и действующие клиенты агентства недвижимости</li>
                 <li>Лица, обратившиеся за консультацией по недвижимости</li>
                 <li>Подписчики на информационную рассылку</li>
@@ -336,7 +336,7 @@ export default function PrivacyPolicyClient() {
                 12. Использование файлов cookies и систем аналитики
               </h2>
               <p className="mb-4">
-                12.1. На сайте v0-123-pi-tawny.vercel.app используются файлы cookies и системы веб-аналитики для:
+                12.1. На сайте kollektsioner-dom.ru используются файлы cookies и системы веб-аналитики для:
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Улучшения функционирования сайта</li>
@@ -399,10 +399,10 @@ export default function PrivacyPolicyClient() {
                   <strong>Телефон:</strong> +7 (812) 660-56-50
                 </p>
                 <p>
-                  <strong>Email:</strong> info@domfy.ru
+                  <strong>Email:</strong> info@kollektsioner-dom.ru
                 </p>
                 <p>
-                  <strong>Сайт:</strong> v0-123-pi-tawny.vercel.app
+                  <strong>Сайт:</strong> kollektsioner-dom.ru
                 </p>
                 <p>
                   <strong>Ответственный за обработку персональных данных:</strong> Козлов Николай Викторович
@@ -421,9 +421,9 @@ export default function PrivacyPolicyClient() {
                 об изменениях, вносимых в настоящую Политику.
               </p>
               <p className="mb-4">
-                15.2. Актуальная версия Политики размещается на сайте v0-123-pi-tawny.vercel.app по адресу:
-                v0-123-pi-tawny.vercel.app/privacy/ и вступает в силу с момента ее размещения, если иной порядок
-                вступления в силу не предусмотрен новой редакцией Политики.
+                15.2. Актуальная версия Политики размещается на сайте kollektsioner-dom.ru по адресу:
+                kollektsioner-dom.ru/privacy/ и вступает в силу с момента ее размещения, если иной порядок вступления в
+                силу не предусмотрен новой редакцией Политики.
               </p>
               <p className="mb-4">
                 15.3. В случае несогласия субъекта персональных данных с условиями настоящей Политики обработка его
