@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
 
     try {
       const chatId = "form_" + Math.random().toString(36).substr(2, 9)
-      const formMessage = `Новая заявка с сайта "Гений"
+      const formMessage = `Новая заявка с сайта "Коллекционер"
 
 Тип формы: ${formId || source}
 Имя: ${name || "Не указано"}

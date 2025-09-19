@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 const ChatWidgetConfig = {
   webhook: {
-    url: "https://n8n.getsync.ru/webhook/645aa356-14ed-4aaa-81fd-16f54829573a/chat",
+    url: "https://n8n.getsync.ru/webhook/8bcaf948-ac52-4b24-860d-69fa70980a29/chat",
     route: "general",
   },
   style: {
@@ -152,14 +152,13 @@ export default function ChatWidget() {
             id="chat-widget-button"
             data-chat-widget-button
           >
-            <div className="siri-wave-container">
-              <div className="siri-wave animate-siriWave1"></div>
-              <div className="siri-wave animate-siriWave2"></div>
-              <div className="siri-wave animate-siriWave3"></div>
-              <div className="siri-wave animate-siriWave4"></div>
-              <div className="siri-wave animate-siriWave2"></div>
-              <div className="siri-wave animate-siriWave1"></div>
-              <div className="siri-wave animate-siriWave3"></div>
+            <div className="siri-sphere-container">
+              <div className="siri-sphere-main">
+                <div className="siri-sphere-inner"></div>
+                <div className="siri-wave-ring ring-1"></div>
+                <div className="siri-wave-ring ring-2"></div>
+                <div className="siri-wave-ring ring-3"></div>
+              </div>
             </div>
           </button>
         )}
@@ -171,10 +170,12 @@ export default function ChatWidget() {
             id="chat-widget-container"
           >
             {/* Заголовок */}
-            <div className="p-5 font-medium flex justify-between items-center text-lg" id="chat-widget-header">
+            <div className="p-5 font-medium flex justify-between items-center text-base" id="chat-widget-header">
               <span className="text-white flex items-center gap-2">
-                <i className="bx bx-message-dots text-xl"></i>
-                ИИ помощник ЖК Гений
+                <div className="siri-icon-mini">
+                  <div className="siri-sphere"></div>
+                </div>
+                ИИ помощник Коллекционер
               </span>
               <button onClick={() => setIsOpen(false)} className="close-button">
                 <i className="bx bx-x text-xl"></i>
@@ -366,26 +367,103 @@ export default function ChatWidget() {
           box-shadow: 0 10px 25px -5px rgba(220, 195, 151, 0.5), 0 8px 10px -6px rgba(220, 195, 151, 0.3);
         }
 
-        .chat-widget-wrapper .siri-wave-container {
-          height: 100%;
-          width: 100%;
+        /* Переработанная многослойная анимация Siri с более тонкими эффектами */
+        .chat-widget-wrapper .siri-sphere-container {
+          position: relative;
+          width: 32px;
+          height: 32px;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 3px;
         }
 
-        .chat-widget-wrapper .siri-wave {
+        .chat-widget-wrapper .siri-sphere-main {
+          position: relative;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: radial-gradient(
+            circle at 35% 25%, 
+            rgba(240, 220, 180, 0.85) 0%,
+            rgba(220, 195, 151, 0.7) 25%,
+            rgba(200, 175, 130, 0.5) 50%,
+            rgba(180, 155, 110, 0.3) 75%,
+            rgba(160, 135, 90, 0.15) 100%
+          );
+          box-shadow: 
+            0 0 8px rgba(220, 195, 151, 0.3),
+            inset 0 1px 3px rgba(240, 220, 180, 0.4),
+            inset 0 -1px 2px rgba(160, 135, 90, 0.1);
+          animation: siriSphereFloat 6s ease-in-out infinite;
+          filter: blur(0.3px);
+        }
+
+        .chat-widget-wrapper .siri-sphere-inner {
+          position: absolute;
+          top: 3px;
+          left: 3px;
           width: 3px;
-          height: 15px;
-          background-color: white;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-          box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+          height: 3px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(245, 230, 190, 0.6) 0%, rgba(220, 195, 151, 0.4) 100%);
+          box-shadow: 0 0 2px rgba(240, 220, 180, 0.3);
+          animation: siriInnerGlow 4s ease-in-out infinite alternate;
+          filter: blur(0.2px);
         }
 
-        .chat-widget-wrapper #chat-widget-button:hover .siri-wave {
-          box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        .chat-widget-wrapper .siri-wave-ring {
+          position: absolute;
+          border: 0.5px solid rgba(220, 195, 151, 0.08);
+          border-radius: 50%;
+          animation: siriRingPulse 8s ease-in-out infinite;
+          opacity: 0;
+          filter: blur(0.5px);
+        }
+
+        .chat-widget-wrapper .ring-1 {
+          width: 22px;
+          height: 22px;
+          animation-delay: 0s;
+          border-color: rgba(220, 195, 151, 0.12);
+        }
+
+        .chat-widget-wrapper .ring-2 {
+          width: 26px;
+          height: 26px;
+          animation-delay: -2.5s;
+          border-color: rgba(220, 195, 151, 0.08);
+        }
+
+        .chat-widget-wrapper .ring-3 {
+          width: 30px;
+          height: 30px;
+          animation-delay: -5s;
+          border-color: rgba(220, 195, 151, 0.05);
+        }
+
+        .chat-widget-wrapper .siri-icon-mini {
+          width: 16px;
+          height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .chat-widget-wrapper .siri-icon-mini .siri-sphere {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: radial-gradient(
+            circle at 35% 25%, 
+            rgba(240, 220, 180, 0.8) 0%,
+            rgba(220, 195, 151, 0.6) 50%,
+            rgba(200, 175, 130, 0.3) 100%
+          );
+          box-shadow: 
+            0 0 3px rgba(220, 195, 151, 0.2),
+            inset 0 1px 2px rgba(240, 220, 180, 0.3);
+          animation: siriMiniPulse 5s ease-in-out infinite;
+          filter: blur(0.2px);
         }
 
         .chat-widget-wrapper .close-button {
@@ -469,30 +547,92 @@ export default function ChatWidget() {
           font-size: 20px;
         }
 
-        /* Анимации */
+        /* Обновленные анимации с более плавными и тонкими эффектами */
         @keyframes slowPulse {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.7; }
         }
 
-        @keyframes siriWave1 {
-          0%, 100% { transform: scaleY(0.6); }
-          50% { transform: scaleY(1.0); }
+        @keyframes siriSphereFloat {
+          0%, 100% { 
+            transform: translateY(0px) scale(1);
+            box-shadow: 
+              0 0 8px rgba(220, 195, 151, 0.3),
+              inset 0 1px 3px rgba(240, 220, 180, 0.4),
+              inset 0 -1px 2px rgba(160, 135, 90, 0.1);
+          }
+          33% { 
+            transform: translateY(-1px) scale(1.02);
+            box-shadow: 
+              0 0 10px rgba(220, 195, 151, 0.4),
+              inset 0 1px 3px rgba(240, 220, 180, 0.5),
+              inset 0 -1px 2px rgba(160, 135, 90, 0.08);
+          }
+          66% { 
+            transform: translateY(1px) scale(0.98);
+            box-shadow: 
+              0 0 6px rgba(220, 195, 151, 0.25),
+              inset 0 1px 3px rgba(240, 220, 180, 0.35),
+              inset 0 -1px 2px rgba(160, 135, 90, 0.12);
+          }
         }
 
-        @keyframes siriWave2 {
-          0%, 100% { transform: scaleY(0.3); }
-          50% { transform: scaleY(0.8); }
+        @keyframes siriInnerGlow {
+          0% { 
+            opacity: 0.3;
+            transform: scale(0.9);
+            box-shadow: 0 0 1px rgba(240, 220, 180, 0.2);
+          }
+          50% { 
+            opacity: 0.5;
+            transform: scale(1.1);
+            box-shadow: 0 0 2px rgba(240, 220, 180, 0.3);
+          }
+          100% { 
+            opacity: 0.4;
+            transform: scale(1);
+            box-shadow: 0 0 1.5px rgba(240, 220, 180, 0.25);
+          }
         }
 
-        @keyframes siriWave3 {
-          0%, 100% { transform: scaleY(0.8); }
-          50% { transform: scaleY(0.4); }
+        @keyframes siriRingPulse {
+          0% {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          25% {
+            opacity: 0.08;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.12;
+            transform: scale(1.05);
+          }
+          75% {
+            opacity: 0.06;
+            transform: scale(1.1);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(1.15);
+          }
         }
 
-        @keyframes siriWave4 {
-          0%, 100% { transform: scaleY(0.5); }
-          50% { transform: scaleY(0.9); }
+        @keyframes siriMiniPulse {
+          0%, 100% { 
+            opacity: 0.6;
+            transform: scale(1);
+            box-shadow: 
+              0 0 2px rgba(220, 195, 151, 0.15),
+              inset 0 1px 2px rgba(240, 220, 180, 0.2);
+          }
+          50% { 
+            opacity: 0.8;
+            transform: scale(1.05);
+            box-shadow: 
+              0 0 3px rgba(220, 195, 151, 0.25),
+              inset 0 1px 2px rgba(240, 220, 180, 0.3);
+          }
         }
 
         @keyframes hoverPulse {
@@ -502,10 +642,6 @@ export default function ChatWidget() {
         }
 
         .animate-slowPulse { animation: slowPulse 3s infinite ease-in-out; }
-        .animate-siriWave1 { animation: siriWave1 3s infinite ease-in-out; }
-        .animate-siriWave2 { animation: siriWave2 3s infinite ease-in-out -0.4s; }
-        .animate-siriWave3 { animation: siriWave3 3s infinite ease-in-out -0.8s; }
-        .animate-siriWave4 { animation: siriWave4 3s infinite ease-in-out -1.2s; }
         .animate-hoverPulse { animation: hoverPulse 4s infinite; }
       `}</style>
     </>

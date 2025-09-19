@@ -22,10 +22,6 @@ export default function Infrastructure() {
 
   const courtImages = [
     {
-      src: "/images/courtyard-1.jpeg",
-      alt: "Ребенок с зонтом в осеннем дворе-патио среди современных зданий",
-    },
-    {
       src: "/images/courtyard-2.jpeg",
       alt: "Женщина в деловом костюме в круглом кресле-коконе на фоне зеленой стены",
     },

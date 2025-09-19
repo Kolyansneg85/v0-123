@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-building-light.webp"
-            alt="ЖК Обь"
+            alt="ЖК Коллекционер"
             fill
             className="object-cover brightness-95"
             priority
@@ -52,7 +52,7 @@ export default function Hero() {
             <button
               onClick={() => setIsPresentationModalOpen(true)}
               style={{
-                background: "rgba(0, 0, 0, 0.7) !important",
+                background: "rgba(255, 255, 255, 0.2) !important",
                 backdropFilter: "blur(10px)",
                 border: "2px solid rgba(255, 255, 255, 0.8)",
                 borderRadius: "22px",
@@ -65,11 +65,11 @@ export default function Hero() {
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.setProperty("background", "rgba(255, 255, 255, 0.9)", "important")
-                e.currentTarget.style.setProperty("color", "black", "important")
+                e.currentTarget.style.setProperty("background", "rgba(0, 0, 0, 0.8)", "important")
+                e.currentTarget.style.setProperty("color", "white", "important")
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.setProperty("background", "rgba(0, 0, 0, 0.7)", "important")
+                e.currentTarget.style.setProperty("background", "rgba(255, 255, 255, 0.2)", "important")
                 e.currentTarget.style.setProperty("color", "white", "important")
               }}
             >

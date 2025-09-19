@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   description:
     "Современный жилой комплекс с квартирами от 1 до 4 комнат. Ответы на частые вопросы о покупке, ипотеке, инфраструктуре. Звоните!",
   keywords: "жилой комплекс, квартиры, недвижимость, новостройка, ипотека, FAQ, вопросы ответы",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${inter.variable} ${historyPro.variable} ${ceraPro.variable} ${roboto.variable}`}>
-      <body>
+      <body className="overflow-x-hidden">
         {children}
         <ChatWidget />
       </body>

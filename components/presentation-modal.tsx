@@ -73,8 +73,9 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
 
       // Start PDF download after successful webhook submission
       const link = document.createElement("a")
-      link.href = "https://6ce3ab7d-ca19-4563-89f5-bf0d195953bc.selstorage.ru/%D0%91%D1%83%D0%BA%D0%BB%D0%B5%D1%82.pdf"
-      link.download = "ЖК-Гений-Презентация.pdf"
+      link.href =
+        "https://6ce3ab7d-ca19-4563-89f5-bf0d195953bc.selstorage.ru/%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80_%D0%B1%D1%83%D0%BA%D0%BB%D0%B5%D1%82.pdf"
+      link.download = "Коллекционер-Презентация.pdf"
       link.target = "_blank" // Open in new tab as fallback
       document.body.appendChild(link)
       link.click()
@@ -91,8 +92,9 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
       console.error("[v0] Error submitting presentation form:", error)
       // Still allow download even if webhook fails
       const link = document.createElement("a")
-      link.href = "https://6ce3ab7d-ca19-4563-89f5-bf0d195953bc.selstorage.ru/%D0%91%D1%83%D0%BA%D0%BB%D0%B5%D1%82.pdf"
-      link.download = "ЖК-Гений-Презентация.pdf"
+      link.href =
+        "https://6ce3ab7d-ca19-4563-89f5-bf0d195953bc.selstorage.ru/%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80_%D0%B1%D1%83%D0%BA%D0%BB%D0%B5%D1%82.pdf"
+      link.download = "Коллекционер-Презентация.pdf"
       link.target = "_blank"
       document.body.appendChild(link)
       link.click()
