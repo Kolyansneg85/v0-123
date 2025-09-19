@@ -106,7 +106,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="font-light opacity-75 text-sm uppercase tracking-wide">Email</p>
-                  <p className="text-xl">info@kollektsioner-dom.ru</p>
+                  <p className="text-xl">info@domfy.ru</p>
                 </div>
               </div>
             </div>
