@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import { validatePhoneNumber, formatPhoneError } from "@/lib/phone-validation"
 import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -19,6 +19,7 @@ export default function Infrastructure() {
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [phoneError, setPhoneError] = useState("")
 
   const courtImages = [
     {
@@ -54,6 +55,13 @@ export default function Infrastructure() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!validatePhoneNumber(formData.phone)) {
+      setPhoneError(formatPhoneError())
+      return
+    }
+
+    setPhoneError("")
     setIsLoading(true)
 
     try {
@@ -88,6 +96,10 @@ export default function Infrastructure() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (e.target.name === "phone" && phoneError) {
+      setPhoneError("")
+    }
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -286,17 +298,22 @@ export default function Infrastructure() {
                     autoComplete="off"
                     className="bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px]"
                   />
-                  <Input
-                    name="phone"
-                    type="tel"
-                    placeholder="Телефон"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    disabled={isLoading}
-                    autoComplete="off"
-                    className="bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px]"
-                  />
+                  <div>
+                    <Input
+                      name="phone"
+                      type="tel"
+                      placeholder="Телефон"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      disabled={isLoading}
+                      autoComplete="off"
+                      className={`bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px] ${
+                        phoneError ? "border-red-500" : ""
+                      }`}
+                    />
+                    {phoneError && <p className="text-red-500 text-sm mt-2">{phoneError}</p>}
+                  </div>
                   <Textarea
                     name="wishes"
                     placeholder="Ваши пожелания"

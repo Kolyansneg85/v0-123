@@ -1,13 +1,13 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useRef } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
+import { validatePhoneNumber, formatPhoneError } from "@/lib/phone-validation"
 
 interface PaymentOptionsModalProps {
   isOpen: boolean
@@ -22,10 +22,18 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
   })
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [phoneError, setPhoneError] = useState("")
   const dialogRef = useRef<HTMLDivElement>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!validatePhoneNumber(formData.phone)) {
+      setPhoneError(formatPhoneError())
+      return
+    }
+
+    setPhoneError("")
     setIsLoading(true)
 
     try {
@@ -60,6 +68,10 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (e.target.name === "phone" && phoneError) {
+      setPhoneError("")
+    }
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -110,19 +122,24 @@ export default function PaymentOptionsModal({ isOpen, onClose }: PaymentOptionsM
               onFocus={(e) => (e.target.tabIndex = 0)}
               className="bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px]"
             />
-            <Input
-              name="phone"
-              type="tel"
-              placeholder="Телефон"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              disabled={isLoading}
-              autoComplete="off"
-              tabIndex={-1}
-              onFocus={(e) => (e.target.tabIndex = 0)}
-              className="bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px]"
-            />
+            <div>
+              <Input
+                name="phone"
+                type="tel"
+                placeholder="Телефон"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                disabled={isLoading}
+                autoComplete="off"
+                tabIndex={-1}
+                onFocus={(e) => (e.target.tabIndex = 0)}
+                className={`bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px] ${
+                  phoneError ? "border-red-500" : ""
+                }`}
+              />
+              {phoneError && <p className="text-red-500 text-sm mt-2">{phoneError}</p>}
+            </div>
             <Textarea
               name="wishes"
               placeholder="Ваши пожелания"

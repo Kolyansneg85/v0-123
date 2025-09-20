@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import { validatePhoneNumber, formatPhoneError } from "@/lib/phone-validation"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -19,9 +19,15 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
     phone: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [phoneError, setPhoneError] = useState("")
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
+
+    if (name === "phone" && phoneError) {
+      setPhoneError("")
+    }
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -35,6 +41,12 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
       return
     }
 
+    if (!validatePhoneNumber(formData.phone)) {
+      setPhoneError(formatPhoneError())
+      return
+    }
+
+    setPhoneError("")
     setIsSubmitting(true)
 
     try {
@@ -153,8 +165,11 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
               value={formData.phone}
               onChange={handleInputChange}
               required
-              className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a8996e] focus:border-transparent"
+              className={`w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a8996e] focus:border-transparent ${
+                phoneError ? "border-red-500" : ""
+              }`}
             />
+            {phoneError && <p className="text-red-500 text-sm mt-2">{phoneError}</p>}
           </div>
 
           <Button

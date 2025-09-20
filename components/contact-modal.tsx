@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import { validatePhoneNumber, formatPhoneError } from "@/lib/phone-validation"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -22,9 +22,17 @@ export default function ContactModal({ isOpen, onClose, buttonText = "Кнопк
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [phoneError, setPhoneError] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!validatePhoneNumber(formData.phone)) {
+      setPhoneError(formatPhoneError())
+      return
+    }
+
+    setPhoneError("")
     setIsSubmitting(true)
 
     try {
@@ -64,6 +72,10 @@ export default function ContactModal({ isOpen, onClose, buttonText = "Кнопк
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.name === "phone" && phoneError) {
+      setPhoneError("")
+    }
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -131,8 +143,9 @@ export default function ContactModal({ isOpen, onClose, buttonText = "Кнопк
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-[22px]"
+                  className={`w-full rounded-[22px] ${phoneError ? "border-red-500" : ""}`}
                 />
+                {phoneError && <p className="text-red-500 text-sm mt-2">{phoneError}</p>}
               </div>
 
               <Button

@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import { validatePhoneNumber, formatPhoneError } from "@/lib/phone-validation"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -18,9 +18,17 @@ export default function ContactForm() {
   })
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [phoneError, setPhoneError] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!validatePhoneNumber(formData.phone)) {
+      setPhoneError(formatPhoneError())
+      return
+    }
+
+    setPhoneError("")
     setIsLoading(true)
 
     try {
@@ -72,6 +80,10 @@ export default function ContactForm() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (e.target.name === "phone" && phoneError) {
+      setPhoneError("")
+    }
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -131,16 +143,21 @@ export default function ContactForm() {
                   disabled={isLoading}
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#a8996e] rounded-[22px]"
                 />
-                <Input
-                  name="phone"
-                  type="tel"
-                  placeholder="Телефон"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  disabled={isLoading}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#a8996e] rounded-[22px]"
-                />
+                <div>
+                  <Input
+                    name="phone"
+                    type="tel"
+                    placeholder="Телефон"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
+                    className={`bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#a8996e] rounded-[22px] ${
+                      phoneError ? "border-red-500" : ""
+                    }`}
+                  />
+                  {phoneError && <p className="text-red-400 text-sm mt-2">{phoneError}</p>}
+                </div>
                 <Input
                   name="email"
                   type="email"
