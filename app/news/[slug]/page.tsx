@@ -392,7 +392,7 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
             <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-balance">{article.title}</h1>
 
             <div
-              className="prose prose-lg max-w-none 
+              className="article-content prose prose-lg max-w-none 
                 prose-headings:text-gray-900 prose-headings:font-bold prose-headings:mt-8 prose-headings:mb-4
                 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
                 prose-p:text-gray-700 prose-p:mb-4 prose-p:leading-relaxed
