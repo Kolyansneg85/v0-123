@@ -57,7 +57,7 @@ export default function NotFound() {
 
             {/* Additional Info */}
             <div className="mt-16 p-8 bg-white rounded-2xl shadow-sm border border-slate-200">
-              <h3 className="text-xl font-semibold text-slate-800 mb-4 font-cera-pro">ЖК «Коллекционер»</h3>
+              <h3 className="text-xl font-semibold text-slate-800 mb-4 font-cera-pro">Дом «Коллекционер»</h3>
               <p className="text-slate-600 mb-6">
                 Премиальный жилой комплекс в центре Санкт-Петербурга — элитные квартиры с уникальной архитектурой и
                 высоким уровнем комфорта для истинных ценителей качества.
