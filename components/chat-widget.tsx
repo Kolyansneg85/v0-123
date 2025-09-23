@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 const ChatWidgetConfig = {
   webhook: {
-    url: "https://n8n.getsync.ru/webhook/6164586f-d161-4e09-a7a9-523754879d38/chat",
+    url: "https://n8n.getsync.ru/webhook/8bcaf948-ac52-4b24-860d-69fa70980a29/chat",
     route: "general",
   },
   style: {
