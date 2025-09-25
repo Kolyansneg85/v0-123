@@ -1,38 +1,35 @@
 import Image from "next/image"
-import Head from "next/head"
 
 export default function LifeScenarios() {
   return (
     <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "VisualArtwork",
-              name: "Коллекция произведений искусства в клубном доме «Коллекционер»",
-              description:
-                "Пинакотека с работами Латифа Казбекова и Виктора Грачёва, ставшая центральным элементом общественных пространств дома. Современное искусство, гармонично интегрированное в архитектуру и атмосферу жилого комплекса.",
-              artMedium: "живопись, скульптура",
-              inProject: {
-                "@type": "Project",
-                name: "Клубный дом «Коллекционер», Санкт-Петербург",
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VisualArtwork",
+            name: "Коллекция произведений искусства в клубном доме «Коллекционер»",
+            description:
+              "Пинакотека с работами Латифа Казбекова и Виктора Грачёва, ставшая центральным элементом общественных пространств дома. Современное искусство, гармонично интегрированное в архитектуру и атмосферу жилого комплекса.",
+            artMedium: "живопись, скульптура",
+            inProject: {
+              "@type": "Project",
+              name: "Клубный дом «Коллекционер», Санкт-Петербург",
+            },
+            locationCreated: {
+              "@type": "Place",
+              name: "Клубный дом «Коллекционер»",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "ул. Чапыгина, 4",
+                addressLocality: "Санкт-Петербург",
+                addressCountry: "RU",
               },
-              locationCreated: {
-                "@type": "Place",
-                name: "Клубный дом «Коллекционер»",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: "ул. Чапыгина, 4",
-                  addressLocality: "Санкт-Петербург",
-                  addressCountry: "RU",
-                },
-              },
-            }),
-          }}
-        />
-      </Head>
+            },
+          }),
+        }}
+      />
 
       <section id="life-scenarios" className="py-16 bg-white scroll-mt-20">
         <div className="container mx-auto px-4">

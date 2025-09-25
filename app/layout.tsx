@@ -81,7 +81,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${inter.variable} ${historyPro.variable} ${ceraPro.variable} ${roboto.variable}`}>
-      <head>{/* Yandex Metrika script moved to body */}</head>
       <body className="overflow-x-hidden">
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`

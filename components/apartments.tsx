@@ -159,6 +159,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Гардеробная", value: true },
         { "@type": "LocationFeatureSpecification", name: "Европланировка", value: true },
       ],
+      image: "/images/1room-plan-1.png",
     },
     {
       "@context": "https://schema.org",
@@ -180,6 +181,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Два санузла", value: true },
         { "@type": "LocationFeatureSpecification", name: "Большие окна", value: true },
       ],
+      image: "/images/1room-plan-2.png",
     },
     {
       "@context": "https://schema.org",
@@ -201,6 +203,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Большая кухня-гостиная", value: true },
         { "@type": "LocationFeatureSpecification", name: "Европланировка", value: true },
       ],
+      image: "/images/1room-plan-3.png",
     },
   ],
   1: [
@@ -224,6 +227,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Два санузла", value: true },
         { "@type": "LocationFeatureSpecification", name: "Просторная прихожая", value: true },
       ],
+      image: "/images/2room-plan-1.png",
     },
     {
       "@context": "https://schema.org",
@@ -245,6 +249,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Балкон", value: true },
         { "@type": "LocationFeatureSpecification", name: "Гардеробные", value: true },
       ],
+      image: "/images/2room-plan-2.png",
     },
     {
       "@context": "https://schema.org",
@@ -266,6 +271,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Детская комната", value: true },
         { "@type": "LocationFeatureSpecification", name: "Премиальная планировка", value: true },
       ],
+      image: "/images/2room-plan-3.png",
     },
   ],
   2: [
@@ -285,6 +291,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Гардеробные", value: true },
         { "@type": "LocationFeatureSpecification", name: "Два санузла", value: true },
       ],
+      image: "/images/3room-plan-1.png",
     },
     {
       "@context": "https://schema.org",
@@ -302,6 +309,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Детская/кабинет", value: true },
         { "@type": "LocationFeatureSpecification", name: "Угловая планировка", value: true },
       ],
+      image: "/images/3room-plan-2.png",
     },
     {
       "@context": "https://schema.org",
@@ -319,6 +327,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Мастер-блок", value: true },
         { "@type": "LocationFeatureSpecification", name: "Вторая гостиная/кабинет", value: true },
       ],
+      image: "/images/3room-plan-3.png",
     },
     {
       "@context": "https://schema.org",
@@ -336,6 +345,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Терраса", value: true },
         { "@type": "LocationFeatureSpecification", name: "Приватность и виды", value: true },
       ],
+      image: "/images/3room-plan-4.png",
     },
     {
       "@context": "https://schema.org",
@@ -353,6 +363,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Три санузла", value: true },
         { "@type": "LocationFeatureSpecification", name: "Увеличенные системы хранения", value: true },
       ],
+      image: "/images/3room-plan-5.png",
     },
     {
       "@context": "https://schema.org",
@@ -370,6 +381,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Три санузла", value: true },
         { "@type": "LocationFeatureSpecification", name: "Хозяйственный блок", value: true },
       ],
+      image: "/images/3room-plan-6.png",
     },
   ],
   3: [
@@ -394,6 +406,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Четыре санузла", value: true },
         { "@type": "LocationFeatureSpecification", name: "Представительная резиденция", value: true },
       ],
+      image: "/images/4room-plan-1.png",
     },
   ],
   4: [
@@ -419,6 +432,7 @@ const apartmentJsonLd = {
         { "@type": "LocationFeatureSpecification", name: "Большие террасы", value: true },
         { "@type": "LocationFeatureSpecification", name: "Семейная гостиная", value: true },
       ],
+      image: "/images/5room-plan-1.png",
     },
   ],
 }
