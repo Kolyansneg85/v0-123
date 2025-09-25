@@ -50,6 +50,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Клубный дом Коллекционер" }],
   creator: "Клубный дом Коллекционер",
   publisher: "Клубный дом Коллекционер",
+  other: {
+    "content-language": "ru",
+    language: "Russian",
+    "geo.region": "RU-SPE",
+    "geo.placename": "Saint Petersburg",
+    "geo.position": "59.9311;30.3609",
+    ICBM: "59.9311, 30.3609",
+  },
   formatDetection: {
     email: false,
     address: false,
