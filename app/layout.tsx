@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Roboto } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
@@ -34,12 +34,39 @@ const ceraPro = localFont({
   display: "swap",
 })
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#1a1a1a",
+}
+
 export const metadata: Metadata = {
   title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
   description:
     "Клубный дом премиум-класса в Петроградском районе Санкт-Петербурга на улице Чапыгина 4. Квартиры от 42.8 м². Скоро в продаже.",
   keywords: "клубный дом, коллекционер, петроградский район, элитное жилье, санкт-петербург, чапыгина 4",
+  authors: [{ name: "Клубный дом Коллекционер" }],
+  creator: "Клубный дом Коллекционер",
+  publisher: "Клубный дом Коллекционер",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   generator: "v0.app",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: 'Клубный дом "Коллекционер" - Элитное жилье в Петроградском районе',
     description:

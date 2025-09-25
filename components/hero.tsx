@@ -7,8 +7,57 @@ import PresentationModal from "./presentation-modal"
 export default function Hero() {
   const [isPresentationModalOpen, setIsPresentationModalOpen] = useState(false)
 
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    name: "ЖК Коллекционер",
+    description: "Клубный дом «Коллекционер» в Петроградском районе Санкт-Петербурга",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "улица Чапыгина 4",
+      addressLocality: "Санкт-Петербург",
+      addressRegion: "Санкт-Петербург",
+      addressCountry: "RU",
+    },
+    url: "https://kollektsioner-dom.ru",
+    telephone: "+7 (812) 123-45-67",
+    priceRange: "Цена по запросу",
+    areaServed: "Петроградский район",
+    serviceType: "Продажа недвижимости",
+  }
+
+  const realEstateJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    name: "Клубный дом «Коллекционер»",
+    description: "Премиальный жилой комплекс в историческом центре Санкт-Петербурга",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "улица Чапыгина 4",
+      addressLocality: "Санкт-Петербург",
+      addressRegion: "Санкт-Петербург",
+      postalCode: "197046",
+      addressCountry: "RU",
+    },
+    numberOfAccommodationUnits: 69,
+    floorSize: {
+      "@type": "QuantitativeValue",
+      minValue: 42.8,
+      unitCode: "MTK",
+    },
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Подземный паркинг", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Консьерж-сервис", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Пинакотека", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Приватный двор", value: true },
+    ],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateJsonLd) }} />
+
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">

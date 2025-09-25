@@ -92,7 +92,12 @@ export default function ProjectIntro() {
             {/* Right Column - Image */}
             <div className="relative">
               <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src="/images/project-intro-building.webp" alt="ЖК Обь" fill className="object-cover" />
+                <Image
+                  src="/images/project-intro-building.webp"
+                  alt="Клубный дом «Коллекционер» на Петроградской стороне - эклектичная архитектура с натуральным камнем, башенками и латунными инкрустациями в историческом центре Санкт-Петербурга"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
