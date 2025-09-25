@@ -304,6 +304,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: `${article.title} | Клубный дом Коллекционер - Domfy`,
     description: article.excerpt,
     keywords: `Клубный дом Коллекционер, ${article.title}, новости недвижимости, Петроградская сторона, Санкт-Петербург`,
+    alternates: {
+      canonical: `https://kollektsioner-dom.ru/news/${params.slug}`,
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,
