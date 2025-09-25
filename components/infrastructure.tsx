@@ -163,6 +163,7 @@ export default function Infrastructure() {
                   alt="Приватный двор-патио клубного дома Коллекционер с зонами отдыха и ландшафтным дизайном"
                   fill
                   className="object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -224,6 +225,7 @@ export default function Infrastructure() {
                     alt={courtImages[currentImageIndex].alt}
                     fill
                     className="object-cover"
+                    loading="lazy"
                   />
 
                   {/* Navigation arrows */}

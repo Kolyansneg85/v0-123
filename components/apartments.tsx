@@ -651,6 +651,7 @@ export default function Apartments() {
                     width={activeType === 4 ? 800 : 400}
                     height={300}
                     className="object-contain max-w-full max-h-full"
+                    loading="lazy"
                   />
                 </div>
 

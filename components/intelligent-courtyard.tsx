@@ -71,6 +71,7 @@ export default function IntelligentCourtyard() {
                 alt="Современный интерьер с инновационными технологиями и дизайнерской мебелью в клубном доме Коллекционер"
                 fill
                 className="object-cover"
+                loading="lazy"
               />
             </div>
           </div>

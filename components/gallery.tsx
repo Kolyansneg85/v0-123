@@ -131,6 +131,7 @@ export default function Gallery() {
                       fill
                       className="object-cover transition-all duration-700 ease-out"
                       priority={index === 0}
+                      loading={index === 0 ? undefined : "lazy"}
                     />
                   </div>
                 ))}

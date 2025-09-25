@@ -49,6 +49,7 @@ export default function LifeScenarios() {
                   alt="Пинакотека клубного дома «Коллекционер» с произведениями искусства Латифа Казбекова и Виктора Грачёва в современном интерьере лобби"
                   fill
                   className="object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
