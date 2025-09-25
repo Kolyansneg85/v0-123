@@ -81,7 +81,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${inter.variable} ${historyPro.variable} ${ceraPro.variable} ${roboto.variable}`}>
-      <head>
+      <head>{/* Yandex Metrika script moved to body */}</head>
+      <body className="overflow-x-hidden">
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`
             (function(m,e,t,r,i,k,a){
@@ -93,8 +94,6 @@ export default function RootLayout({
             ym(56852935, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
           `}
         </Script>
-      </head>
-      <body className="overflow-x-hidden">
         <noscript>
           <div>
             <img src="https://mc.yandex.ru/watch/56852935" style={{ position: "absolute", left: "-9999px" }} alt="" />
