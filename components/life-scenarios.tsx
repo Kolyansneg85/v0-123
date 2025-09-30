@@ -35,7 +35,7 @@ export default function LifeScenarios() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-light mb-8 text-gray-700 uppercase font-history-pro">
-              ГАЛЛЕРЕЯ И АРТ-КОНЦЕПЦИЯ
+              АРТ-ПРОСТРАНСТВО И ПИНАКОТЕКА
             </h2>
             <div className="w-24 h-px bg-[#a8996e] mx-auto mb-8"></div>
           </div>

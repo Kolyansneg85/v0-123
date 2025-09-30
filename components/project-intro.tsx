@@ -34,7 +34,7 @@ export default function ProjectIntro() {
         name: "Закрытый двор‑патио без машин, зоны отдыха и детские площадки",
         value: true,
       },
-      { "@type": "LocationFeatureSpecification", name: "Коворкинг‑зоны и Wi‑Fi на территории", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Коворкинг‑зоны и Wi-Fi на территории", value: true },
       { "@type": "LocationFeatureSpecification", name: "Подземный паркинг", value: true },
       { "@type": "LocationFeatureSpecification", name: "Индивидуальная вентиляция в квартирах", value: true },
       {
@@ -63,7 +63,7 @@ export default function ProjectIntro() {
 
               <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
                 <p>
-                  Коллекционер расположился в самом сердце Петроградского района Санкт-Петербурга, воплощающая эстетику
+                  Коллекционер расположился в самом сердце Петроградского района Санкт-Петербурга, воплощающий эстетику
                   коллекционного искусства и изысканного стиля. Архитектура комплекса выполнена в сложном эклектичном
                   стиле с использованием натурального камня, выразительных башенок, латунных инкрустаций и крупных
                   карнизов, что придает дому уникальный и запоминающийся облик. Каждая деталь продумана для ценителей
