@@ -227,54 +227,60 @@ const articles: Article[] = [
 
       <h3>Таблица сравнения архитектурных решений:</h3>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Параметр</th>
-            <th>Коллекционер</th>
-            <th>Дом на Кирочной</th>
-            <th>Созидатели</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Стиль</td>
-            <td>Неоэклектика</td>
-            <td>Эклектика XIX в.</td>
-            <td>Эклектика</td>
-          </tr>
-          <tr>
-            <td>Материал фасада</td>
-            <td>Гранит + известняк</td>
-            <td>Камень + кирпич</td>
-            <td>Штукатурка + камень</td>
-          </tr>
-          <tr>
-            <td>Этажность</td>
-            <td>6-8 этажей</td>
-            <td>6-8 этажей</td>
-            <td>4-8 этажей</td>
-          </tr>
-          <tr>
-            <td>Кол-во квартир</td>
-            <td>69</td>
-            <td>69</td>
-            <td>Более 100</td>
-          </tr>
-          <tr>
-            <td>Уникальные элементы</td>
-            <td><a href="/news/kollekcioner-dom-s-pinakotekoy">Пинакотека</a>, латунь</td>
-            <td>Угловая башня</td>
-            <td>Шесть секций</td>
-          </tr>
-          <tr>
-            <td>Двор</td>
-            <td><a href="/#intelligent-courtyard">Закрытый патио</a></td>
-            <td>Подземный паркинг</td>
-            <td>Стандартный</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0 my-6">
+        <div class="inline-block min-w-full align-middle">
+          <div class="overflow-hidden shadow-sm ring-1 ring-gray-200 rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">Параметр</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">Коллекционер</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">Дом на Кирочной</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">Созидатели</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white">
+                <tr>
+                  <td class="px-4 py-3 text-sm text-gray-900 font-medium whitespace-nowrap">Стиль</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Неоэклектика</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Эклектика XIX в.</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Эклектика</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-gray-900 font-medium whitespace-nowrap">Материал фасада</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Гранит + известняк</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Камень + кирпич</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Штукатурка + камень</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-gray-900 font-medium whitespace-nowrap">Этажность</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">6-8 этажей</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">6-8 этажей</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">4-8 этажей</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-gray-900 font-medium whitespace-nowrap">Кол-во квартир</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">69</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">69</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Более 100</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-gray-900 font-medium whitespace-nowrap">Уникальные элементы</td>
+                  <td class="px-4 py-3 text-sm text-gray-700"><a href="/news/kollekcioner-dom-s-pinakotekoy" class="text-[#a8996e] hover:underline font-medium">Пинакотека</a>, латунь</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Угловая башня</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Шесть секций</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-gray-900 font-medium whitespace-nowrap">Двор</td>
+                  <td class="px-4 py-3 text-sm text-gray-700"><a href="/#intelligent-courtyard" class="text-[#a8996e] hover:underline font-medium">Закрытый патио</a></td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Подземный паркинг</td>
+                  <td class="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">Стандартный</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
       <h2>Почему эклектика — идеальный выбор для Петроградской стороны</h2>
 
