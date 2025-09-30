@@ -1,7 +1,7 @@
 import PersonalDataClient from "./PersonalDataClient"
 
 export const metadata = {
-  title: 'Согласие на обработку персональных данных - ЖК "Гений"',
+  title: 'Согласие на обработку персональных данных - дом "Коллекционер"',
   description: "Согласие на обработку персональных данных ЖК Гений",
   robots: {
     index: false,
