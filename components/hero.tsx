@@ -20,8 +20,8 @@ export default function Hero() {
       addressCountry: "RU",
     },
     url: "https://kollektsioner-dom.ru",
-    telephone: "+7 (812) 123-45-67",
-    priceRange: "Цена по запросу",
+    telephone: "+7 (812) 660-56-50",
+    priceRange: "От 30792000 до до 79276000",
     areaServed: "Петроградский район",
     serviceType: "Продажа недвижимости",
   }
@@ -85,11 +85,11 @@ export default function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12 text-center max-w-4xl mx-auto">
             <div className="space-y-2">
               <p className="text-sm opacity-75 uppercase tracking-wide">Срок сдачи</p>
-              <p className="text-xl font-medium">Скоро в продаже</p>
+              <p className="text-xl font-medium">III кв. 2028</p>
             </div>
             <div className="space-y-2">
               <p className="text-sm opacity-75 uppercase tracking-wide">Стоимость</p>
-              <p className="text-xl font-medium">Цена по запросу</p>
+              <p className="text-xl font-medium">от 30.79 млн руб.</p>
             </div>
             <div className="space-y-2">
               <p className="text-sm opacity-75 uppercase tracking-wide">Площадь</p>
