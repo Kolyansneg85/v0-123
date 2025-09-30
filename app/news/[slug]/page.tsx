@@ -364,10 +364,11 @@ const articles: Article[] = [
           "дом с картинной галереей",
           "пинакотека",
           "Петроградская сторона",
-          "эклектика",
-          "витражная анфилада",
-          "приватный двор‑патио",
-          "арт‑концепция"
+          "элитная недвижимость СПб",
+          "пинакотека",
+          "двухуровневые квартиры",
+          "мансардный этаж",
+          "второй свет"
         ],
         "datePublished": "2025-09-19T19:56:00+03:00",
         "dateModified": "2025-09-19T19:56:00+03:00",
@@ -724,7 +725,7 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
                 prose-ul:mb-6 prose-ul:space-y-2
                 prose-strong:text-gray-900 prose-strong:font-semibold
                 prose-a:text-[#a8996e] prose-a:font-medium prose-a:no-underline hover:prose-a:underline hover:prose-a:text-[#8a7a58] prose-a:transition-all
-                prose-blockquote:border-l-[3px] prose-blockquote:border-[#C9A961] prose-blockquote:pl-6 prose-blockquote:py-3 prose-blockquote:my-6 prose-blockquote:italic prose-blockquote:text-gray-600 prose-blockquote:bg-transparent
+                prose-blockquote:border-l-[3px] prose-blockquote:border-[#a8996e] prose-blockquote:pl-6 prose-blockquote:py-3 prose-blockquote:my-6 prose-blockquote:italic prose-blockquote:text-gray-600 prose-blockquote:bg-transparent
                 [&>script]:hidden"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
