@@ -3,15 +3,22 @@
   <!-- заменил старый домен jk-geniy.ru на основной домен kollektsioner-dom.ru -->
   <url>
     <loc>https://kollektsioner-dom.ru/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kollektsioner-dom.ru/news</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- Added new article about eclecticism -->
+  <url>
+    <loc>https://kollektsioner-dom.ru/news/eklektika-novyy-standart-klubnyh-domov</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kollektsioner-dom.ru/news/kollekcioner-dom-s-pinakotekoy</loc>

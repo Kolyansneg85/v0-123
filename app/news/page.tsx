@@ -51,6 +51,16 @@ interface Article {
 
 const articles: Article[] = [
   {
+    id: "6",
+    slug: "eklektika-novyy-standart-klubnyh-domov",
+    title: "Эклектика как новый стандарт клубных домов Петербурга: анализ архитектурной концепции «Коллекционера»",
+    excerpt:
+      "Эклектика переживает второе рождение в сегменте клубных домов Санкт-Петербурга. Клубный дом «Коллекционер» от бюро «Проектная культура» — яркий пример этого тренда, сочетающий элементы петербургской эклектики XIX века с современными архитектурными решениями.",
+    date: "2025-09-30",
+    readTime: "12 мин",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1074-6DaHhQ7j3movfUNnifaO6Ofm57WUxc.webp",
+  },
+  {
     id: "5",
     slug: "kollekcioner-dom-s-pinakotekoy",
     title: "Клубный дом «Коллекционер»: дом с картинной галереей на Петроградской стороне",
