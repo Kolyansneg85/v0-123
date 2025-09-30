@@ -160,10 +160,14 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
           </div>
 
           <div>
+            <label htmlFor="presentation-phone" className="block text-sm font-medium text-gray-700 mb-2">
+              Телефон <span className="text-red-500">*</span>
+            </label>
             <Input
+              id="presentation-phone"
               type="tel"
               name="phone"
-              placeholder="Телефон *"
+              placeholder="+7 (999) 123-45-67"
               value={formData.phone}
               onChange={handleInputChange}
               required
@@ -174,10 +178,14 @@ export default function PresentationModal({ isOpen, onClose }: PresentationModal
             {phoneError && <p className="text-red-500 text-sm mt-2">{phoneError}</p>}
           </div>
 
+          <p className="text-xs text-gray-500 -mt-2">
+            <span className="text-red-500">*</span> Обязательное поле
+          </p>
+
           <Button
             type="submit"
             disabled={!formData.phone.trim() || isSubmitting}
-            className="w-full h-12 bg-[#a8996e] hover:bg-[#9a8a5f] text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full h-12 bg-[#a8996e] hover:bg-[#9a8a5f] text-white font-medium rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:scale-[1.02]"
           >
             {isSubmitting ? "Загружается..." : "Скачать презентацию"}
           </Button>

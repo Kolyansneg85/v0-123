@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import ContactModal from "./contact-modal"
@@ -469,87 +469,108 @@ export default function Apartments() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedApartment, setSelectedApartment] = useState("")
 
+  const [minArea, setMinArea] = useState("")
+  const [maxArea, setMaxArea] = useState("")
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([])
+
   const openModal = (apartmentType: string) => {
     setSelectedApartment(apartmentType)
     setIsModalOpen(true)
   }
 
+  const filteredApartments = useMemo(() => {
+    // Check if any filters are active
+    const hasActiveFilters = minArea !== "" || maxArea !== "" || selectedTypes.length > 0
+
+    // If filters are active, search across ALL apartments from ALL tabs
+    // Otherwise, only show apartments from the active tab
+    let allApartments: Array<{
+      id: number
+      type: string
+      area: string
+      deliveryDate: string
+      planType: string
+      floorPlan: string
+      roomCount: number
+    }> = []
+
+    if (hasActiveFilters) {
+      // Flatten all apartments from all tabs and add roomCount for reference
+      Object.entries(apartments).forEach(([roomType, apts]) => {
+        apts.forEach((apt) => {
+          allApartments.push({ ...apt, roomCount: Number.parseInt(roomType) })
+        })
+      })
+    } else {
+      // No filters active, use only the active tab
+      allApartments = apartments[activeType as keyof typeof apartments].map((apt) => ({
+        ...apt,
+        roomCount: activeType,
+      }))
+    }
+
+    let filtered = allApartments
+
+    // Filter by area
+    if (minArea) {
+      filtered = filtered.filter((apt) => Number.parseFloat(apt.area.replace(",", ".")) >= Number.parseFloat(minArea))
+    }
+    if (maxArea) {
+      filtered = filtered.filter((apt) => Number.parseFloat(apt.area.replace(",", ".")) <= Number.parseFloat(maxArea))
+    }
+
+    // Filter by type
+    if (selectedTypes.length > 0) {
+      filtered = filtered.filter((apt) => {
+        // Apartments with terraces: IDs 14, 15, 19, 22, 23
+        const hasTerraceIds = [14, 15, 19, 22, 23]
+        const hasTerrace = hasTerraceIds.includes(apt.id)
+
+        const isTwoLevel = apt.type.includes("двухуровневая")
+
+        // 5-room apartment (222 m²) is mansard
+        const isMansard = apt.id === 23
+
+        // Use .every() to ensure apartment matches ALL selected types (AND logic)
+        return selectedTypes.every((type) => {
+          if (type === "terrace") return hasTerrace
+          if (type === "two-level") return isTwoLevel
+          if (type === "mansard") return isMansard
+          return false
+        })
+      })
+    }
+
+    return filtered
+  }, [activeType, minArea, maxArea, selectedTypes])
+
+  const toggleType = (type: string) => {
+    setSelectedTypes((prev) => (prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]))
+  }
+
+  const resetFilters = () => {
+    setMinArea("")
+    setMaxArea("")
+    setSelectedTypes([])
+  }
+
   return (
     <>
-      {activeType === 0 && (
-        <>
-          {apartmentJsonLd[0].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
-
-      {activeType === 1 && (
-        <>
-          {apartmentJsonLd[1].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
-
-      {activeType === 2 && (
-        <>
-          {apartmentJsonLd[2].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
-
-      {activeType === 3 && (
-        <>
-          {apartmentJsonLd[3].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
-
-      {activeType === 4 && (
-        <>
-          {apartmentJsonLd[4].map((jsonLd, index) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(jsonLd),
-              }}
-            />
-          ))}
-        </>
-      )}
+      {Object.values(apartmentJsonLd)
+        .flat()
+        .map((jsonLd, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(jsonLd),
+            }}
+          />
+        ))}
 
       <section id="apartments" className="pt-32 pb-16 bg-white scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            {/* Изменил цвет заголовка с text-gray-900 на text-gray-800 для лучшего контраста */}
             <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide text-gray-800 font-history-pro">
               ПЛАНИРОВКИ
             </h2>
@@ -596,6 +617,82 @@ export default function Apartments() {
             </div>
           </div>
 
+          <div className="max-w-5xl mx-auto mb-8 bg-gray-50 rounded-2xl p-6 shadow-sm">
+            <div className="flex flex-col md:flex-row gap-6 items-start md:items-end">
+              {/* Area filter */}
+              <div className="flex-1">
+                <label className="block text-sm font-medium text-gray-700 mb-2">Площадь, м²</label>
+                <div className="flex gap-3 items-center">
+                  <input
+                    type="number"
+                    placeholder="От"
+                    value={minArea}
+                    onChange={(e) => setMinArea(e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a8996e] focus:border-transparent transition-all"
+                  />
+                  <span className="text-gray-500">—</span>
+                  <input
+                    type="number"
+                    placeholder="До"
+                    value={maxArea}
+                    onChange={(e) => setMaxArea(e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a8996e] focus:border-transparent transition-all"
+                  />
+                </div>
+              </div>
+
+              {/* Type filter */}
+              <div className="flex-1">
+                <label className="block text-sm font-medium text-gray-700 mb-2">Тип планировки</label>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    onClick={() => toggleType("terrace")}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      selectedTypes.includes("terrace")
+                        ? "bg-[#a8996e] text-white shadow-md"
+                        : "bg-white text-gray-700 border border-gray-300 hover:border-[#a8996e]"
+                    }`}
+                  >
+                    Терраса
+                  </button>
+                  <button
+                    onClick={() => toggleType("two-level")}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      selectedTypes.includes("two-level")
+                        ? "bg-[#a8996e] text-white shadow-md"
+                        : "bg-white text-gray-700 border border-gray-300 hover:border-[#a8996e]"
+                    }`}
+                  >
+                    Двухуровневая
+                  </button>
+                  <button
+                    onClick={() => toggleType("mansard")}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      selectedTypes.includes("mansard")
+                        ? "bg-[#a8996e] text-white shadow-md"
+                        : "bg-white text-gray-700 border border-gray-300 hover:border-[#a8996e]"
+                    }`}
+                  >
+                    Мансардная
+                  </button>
+                </div>
+              </div>
+
+              {/* Reset button */}
+              <button
+                onClick={resetFilters}
+                className="px-6 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-300"
+              >
+                Сбросить
+              </button>
+            </div>
+
+            {/* Results count */}
+            <div className="mt-4 text-sm text-gray-600">
+              Найдено квартир: <span className="font-medium text-gray-900">{filteredApartments.length}</span>
+            </div>
+          </div>
+
           {/* Tab Switcher */}
           <div className="flex justify-center mb-16">
             <div className="flex bg-gray-100 rounded-[20px] p-1">
@@ -614,61 +711,51 @@ export default function Apartments() {
           </div>
 
           {/* Apartments Grid */}
-          <div
-            className={`grid gap-8 max-w-7xl mx-auto ${
-              activeType === 4 ? "grid-cols-1 justify-items-center" : "grid-cols-1 lg:grid-cols-3"
-            }`}
-          >
-            {apartments[activeType as keyof typeof apartments].map((apartment, index) => (
-              <Card
-                key={apartment.id}
-                className={`overflow-hidden border-0 shadow-lg ${activeType === 4 ? "w-full max-w-4xl" : ""}`}
-              >
-                <div
-                  className={`relative bg-white flex items-center justify-center p-4 ${
-                    activeType === 4 ? "h-96 md:h-80" : "h-80"
-                  }`}
+          <div className="grid gap-8 max-w-7xl mx-auto grid-cols-1 lg:grid-cols-3">
+            {filteredApartments.length > 0 ? (
+              filteredApartments.map((apartment, index) => (
+                <Card
+                  key={apartment.id}
+                  className="overflow-hidden border-0 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] group"
                 >
-                  <Image
-                    src={apartment.floorPlan || "/placeholder.svg"}
-                    alt={
-                      (activeType === 0 && apartmentAltTexts[0][index]) ||
-                      (activeType === 1 && apartmentAltTexts[1][index]) ||
-                      (activeType === 2 && apartmentAltTexts[2][index]) ||
-                      (activeType === 3 && apartmentAltTexts[3][index]) ||
-                      (activeType === 4 && apartmentAltTexts[4][index])
-                        ? activeType === 0
-                          ? apartmentAltTexts[0][index]
-                          : activeType === 1
-                            ? apartmentAltTexts[1][index]
-                            : activeType === 2
-                              ? apartmentAltTexts[2][index]
-                              : activeType === 3
-                                ? apartmentAltTexts[3][index]
-                                : apartmentAltTexts[4][index]
-                        : `Планировка ${apartment.type} в ЖК Коллекционер - ${apartment.planType} с оптимальным зонированием пространства`
-                    }
-                    width={activeType === 4 ? 800 : 400}
-                    height={300}
-                    className="object-contain max-w-full max-h-full"
-                    loading="lazy"
-                  />
-                </div>
+                  <div className="relative bg-white flex items-center justify-center p-4 h-80">
+                    <Image
+                      src={apartment.floorPlan || "/placeholder.svg"}
+                      alt={
+                        apartmentAltTexts[apartment.roomCount as keyof typeof apartmentAltTexts]?.[
+                          apartments[apartment.roomCount as keyof typeof apartments].findIndex(
+                            (a) => a.id === apartment.id,
+                          )
+                        ] || `Планировка ${apartment.type} в ЖК Коллекционер`
+                      }
+                      width={400}
+                      height={300}
+                      className="object-contain max-w-full max-h-full transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
 
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-medium mb-2 text-gray-900">{apartment.type}</h3>
-                  <p className="text-gray-600 text-sm mb-1">{apartment.deliveryDate}</p>
-                  <p className="text-gray-600 text-sm mb-6">{apartment.planType}</p>
+                  <CardContent className="p-6 text-center">
+                    <h3 className="text-xl font-medium mb-2 text-gray-900">{apartment.type}</h3>
+                    <p className="text-gray-600 text-sm mb-1">{apartment.deliveryDate}</p>
+                    <p className="text-gray-600 text-sm mb-6">{apartment.planType}</p>
 
-                  <button
-                    onClick={() => openModal(apartment.type)}
-                    className="w-full bg-[#a8996e] hover:bg-[#9d8f5f] text-white px-6 py-3 rounded-[22px] font-light tracking-wide transition-colors"
-                  >
-                    Узнать цену
-                  </button>
-                </CardContent>
-              </Card>
-            ))}
+                    <button
+                      onClick={() => openModal(apartment.type)}
+                      className="w-full bg-[#a8996e] hover:bg-[#9d8f5f] text-white px-6 py-3 rounded-[22px] font-light tracking-wide transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+                    >
+                      Узнать цену
+                    </button>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-gray-500 text-lg">
+                  По выбранным фильтрам квартиры не найдены. Попробуйте изменить параметры поиска.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>

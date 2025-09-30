@@ -301,10 +301,14 @@ export default function Infrastructure() {
                     className="bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px]"
                   />
                   <div>
+                    <label htmlFor="infrastructure-phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Телефон <span className="text-red-500">*</span>
+                    </label>
                     <Input
+                      id="infrastructure-phone"
                       name="phone"
                       type="tel"
-                      placeholder="Телефон"
+                      placeholder="+7 (999) 123-45-67"
                       value={formData.phone}
                       onChange={handleChange}
                       required
@@ -325,10 +329,13 @@ export default function Infrastructure() {
                     autoComplete="off"
                     className="bg-gray-50 border-gray-200 focus:border-[#a8996e] rounded-[22px] min-h-[88px] resize-none"
                   />
+                  <p className="text-xs text-gray-500 -mt-2">
+                    <span className="text-red-500">*</span> Обязательное поле
+                  </p>
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-[#a8996e] hover:bg-[#9d8f5f] text-white font-light tracking-wide py-4 text-lg transition-all duration-300 disabled:opacity-50 rounded-[22px]"
+                    className="w-full bg-[#a8996e] hover:bg-[#9d8f5f] text-white font-light tracking-wide py-4 text-lg transition-all duration-300 disabled:opacity-50 rounded-[22px] hover:shadow-lg hover:scale-[1.02]"
                   >
                     {isLoading ? "ОТПРАВЛЯЕМ..." : "ОТПРАВИТЬ ЗАЯВКУ"}
                   </Button>

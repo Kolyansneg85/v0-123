@@ -144,10 +144,14 @@ export default function ContactForm() {
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#a8996e] rounded-[22px]"
                 />
                 <div>
+                  <label htmlFor="phone" className="block text-sm font-light text-white/80 mb-2">
+                    Телефон <span className="text-red-400">*</span>
+                  </label>
                   <Input
+                    id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="Телефон"
+                    placeholder="+7 (999) 123-45-67"
                     value={formData.phone}
                     onChange={handleChange}
                     required
@@ -175,10 +179,13 @@ export default function ContactForm() {
                   disabled={isLoading}
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#a8996e] rounded-[22px] min-h-[88px] resize-none"
                 />
+                <p className="text-xs text-white/60 -mt-2">
+                  <span className="text-red-400">*</span> Обязательное поле
+                </p>
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-[#a8996e] hover:bg-[#9d8f5f] text-white font-light tracking-wide py-4 text-lg transition-all duration-300 disabled:opacity-50 rounded-[22px]"
+                  className="w-full bg-[#a8996e] hover:bg-[#9d8f5f] text-white font-light tracking-wide py-4 text-lg transition-all duration-300 disabled:opacity-50 rounded-[22px] hover:shadow-lg hover:scale-[1.02]"
                 >
                   {isLoading ? "ОТПРАВЛЯЕМ..." : "ОТПРАВИТЬ ЗАЯВКУ"}
                 </Button>
