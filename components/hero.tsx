@@ -21,7 +21,7 @@ export default function Hero() {
     },
     url: "https://kollektsioner-dom.ru",
     telephone: "+7 (812) 660-56-50",
-    priceRange: "От 30792000 до до 79276000",
+    priceRange: "От 30792000 до 79276000",
     areaServed: "Петроградский район",
     serviceType: "Продажа недвижимости",
   }
