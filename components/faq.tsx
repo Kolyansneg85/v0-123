@@ -124,7 +124,7 @@ export default function FAQ() {
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">Не нашли ответ на свой вопрос?</p>
             <a
-              href="tel:+74951234567"
+              href="tel:+78126605650"
               className="inline-flex items-center px-6 py-3 bg-[#a8996e] text-white rounded-[22px] hover:bg-[#9d8f5f] transition-colors"
             >
               Позвонить консультанту
